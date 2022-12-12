@@ -1,0 +1,16 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__image_container {
+    width: 16rem;
+    height: 17rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
