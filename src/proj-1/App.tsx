@@ -1,6 +1,7 @@
 import Info from './commons/Info';
 import TextSection from './commons/TextSection';
 import { sections } from './config/data';
+import Footer from './commons/Footer';
 
 function App() {
   const renderSections = () =>
@@ -10,6 +11,7 @@ function App() {
     <div>
       <Info />
       {renderSections()}
+      <Footer />
     </div>
   );
 }
