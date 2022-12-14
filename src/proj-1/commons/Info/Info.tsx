@@ -7,16 +7,25 @@ export const Info = (): JSX.Element => {
       <div className={classes.info__image_container}>
         <img className={classes.info__image} src={PhilPhoto} alt="author" />
       </div>
-      <h1>Philipp Khromov</h1>
-      <p>Frontend Developer</p>
-      <p>github.com/foxtrotkilomike</p>
-      <div className={classes.buttons_container}>
-        <button className={`${classes.button} ${classes.button_email}`}>
-          Email
-        </button>
-        <button className={`${classes.button} ${classes.button_linkedin}`}>
-          LinkedIn
-        </button>
+      <div className={classes.info__details}>
+        <h1 className={classes.name}>Philipp Khromov</h1>
+        <p className={classes.occupation}>Frontend Developer</p>
+        <a
+          className={classes.contact_link}
+          href="https://www.github.com/foxtrotkilomike"
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/foxtrotkilomike
+        </a>
+        <div className={classes.buttons_container}>
+          <button className={`${classes.button} ${classes.button__email}`}>
+            Email
+          </button>
+          <button className={`${classes.button} ${classes.button__linkedin}`}>
+            LinkedIn
+          </button>
+        </div>
       </div>
     </section>
   );

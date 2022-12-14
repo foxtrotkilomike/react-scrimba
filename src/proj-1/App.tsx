@@ -1,3 +1,4 @@
+import classes from './App.module.scss';
 import Info from './commons/Info';
 import TextSection from './commons/TextSection';
 import { sections } from './config/data';
@@ -8,7 +9,7 @@ function App() {
     sections.map((section) => <TextSection {...section} key={section.title} />);
 
   return (
-    <div>
+    <div className={classes.card}>
       <Info />
       {renderSections()}
       <Footer />
