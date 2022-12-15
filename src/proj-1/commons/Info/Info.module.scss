@@ -58,6 +58,11 @@
   width: 115px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
+  transition: transform ease 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   &__email {
     background: #ffffff url("../../../assets/icons/mail.svg") no-repeat left 26.5px center;
