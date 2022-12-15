@@ -7,7 +7,9 @@ import ghIcon from '../../assets/icons/gh.svg';
 const sections: TextSectionProps[] = [
   {
     title: 'About',
-    text: 'This is a text about me',
+    text:
+      'This is a text about me This is a text about me This is a text' +
+      ' about me This is a text about me This is a text about me  This is a text about me',
   },
   {
     title: 'Interests',

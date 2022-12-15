@@ -1,6 +1,5 @@
 .info {
   &__image_container {
-    //position: relative;
     height: 17rem;
     overflow: hidden;
     border-top-left-radius: 10px;
@@ -8,8 +7,6 @@
   }
 
   &__image {
-    //position: absolute;
-    //top: -26%;
     width: 108%;
     height: 123%;
     object-fit: cover;
@@ -20,7 +17,7 @@
     flex-direction: column;
     text-align: center;
     gap: 0.6em;
-    padding: 1.25em 1em;
+    padding: 1.25em 1.8em;
   }
 }
 
@@ -42,7 +39,7 @@
 
 .buttons_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   padding-top: 0.6em;
 
