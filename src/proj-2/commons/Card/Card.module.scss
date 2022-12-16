@@ -1,0 +1,37 @@
+.card {
+  width: 176px;
+  font-size: 12px;
+
+  & img {
+    width: 100%;
+  }
+
+  &>* {
+    margin-bottom: 9px;
+  }
+}
+
+.meta_info {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #918E9B;
+}
+
+.starIcon {
+  align-self: flex-start;
+}
+
+.rating {
+  color: #000000;
+}
+
+.dot {
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #918E9B;
+}
