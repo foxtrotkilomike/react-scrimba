@@ -1,0 +1,29 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 26px 36px 50px;
+}
+
+.photo_grid {
+  width: 72%;
+  max-width: 800px;
+}
+
+.info {
+  align-self: flex-start;
+}
+
+.heading {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 110%;
+  margin-bottom: 16px;
+}
+
+.caption {
+  width: 321px;
+  line-height: 120%;
+  font-weight: 300;
+}
