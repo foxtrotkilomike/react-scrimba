@@ -1,8 +1,9 @@
 import KatieZafares from '../assets/airbnb/zafares.png';
 import Wedding from '../assets/airbnb/wedding.png';
 import MountainBike from '../assets/airbnb/mountain-bike.png';
+import { CardProps } from './commons/Card';
 
-export const courseCards = [
+export const courseCards: CardProps[] = [
   {
     image: KatieZafares,
     imageAlt: 'Katie Zafares',
@@ -11,6 +12,7 @@ export const courseCards = [
     country: 'USA',
     caption: 'Life lessons with Katie Zaferes',
     startingPrice: 136,
+    hasOpenSpots: false,
   },
   {
     image: Wedding,
@@ -20,6 +22,7 @@ export const courseCards = [
     country: 'USA',
     caption: 'Learn wedding photography',
     startingPrice: 125,
+    isOnline: true,
   },
   {
     image: MountainBike,
@@ -31,3 +34,8 @@ export const courseCards = [
     startingPrice: 50,
   },
 ];
+
+export enum BADGE_TEXT {
+  OPEN_SPOTS = 'SOLD OUT',
+  ONLINE = 'ONLINE',
+}

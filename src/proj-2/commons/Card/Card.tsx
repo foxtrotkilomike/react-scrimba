@@ -1,4 +1,6 @@
 import classes from './Card.module.scss';
+import { BADGE_TEXT } from '../../config';
+import { Badge } from '../Bage/Bage';
 
 export const Card = (props: CardProps): JSX.Element => {
   const {
@@ -9,10 +11,24 @@ export const Card = (props: CardProps): JSX.Element => {
     country,
     caption,
     startingPrice,
+    hasOpenSpots = true,
+    isOnline = false,
   } = props;
+
+  const renderBadge = () => {
+    let badgeText;
+    if (!hasOpenSpots) {
+      badgeText = BADGE_TEXT.OPEN_SPOTS;
+    } else if (isOnline) {
+      badgeText = BADGE_TEXT.ONLINE;
+    }
+
+    return badgeText && <Badge text={badgeText} />;
+  };
 
   return (
     <article className={classes.card}>
+      {renderBadge()}
       <img src={image} alt={imageAlt} />
       <div className={classes.meta_info}>
         {starIcon}
@@ -29,7 +45,7 @@ export const Card = (props: CardProps): JSX.Element => {
   );
 };
 
-type CardProps = {
+export type CardProps = {
   image: string;
   imageAlt: string;
   rating: string;
@@ -37,6 +53,8 @@ type CardProps = {
   country: string;
   caption: string;
   startingPrice: number;
+  hasOpenSpots?: boolean;
+  isOnline?: boolean;
 };
 
 const starIcon = (
