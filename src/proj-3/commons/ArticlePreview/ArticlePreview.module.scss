@@ -1,0 +1,6 @@
+.articlePreview {
+  &__container {
+    display: grid;
+    grid-template-columns: 125px 1fr;
+  }
+}
