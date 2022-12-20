@@ -7,7 +7,9 @@ function App() {
   return (
     <div className={classes.app}>
       <Header />
-      <ArticlePreview {...articles[0]} />
+      <div className={classes.articlesContainer}>
+        <ArticlePreview {...articles[0]} />
+      </div>
     </div>
   );
 }

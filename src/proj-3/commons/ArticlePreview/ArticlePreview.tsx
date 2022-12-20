@@ -20,12 +20,12 @@ export const ArticlePreview = (props: ArticlePreviewProps): JSX.Element => {
         <div className={classes.container__info}>
           <div className={classes.header}>
             <p className={classes.location}>
-              <i className={classes.location__icon}>{locationIcon}</i>
-              {location}
+              {locationIcon}
+              <span className={classes.location__name}>{location}</span>
+              <a className={classes.location__link} href={googleMapsUrl}>
+                View on Google Maps
+              </a>
             </p>
-            <a className={classes.location__link} href={googleMapsUrl}>
-              View on Google Maps
-            </a>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@ export const ArticlePreview = (props: ArticlePreviewProps): JSX.Element => {
   );
 };
 
-type ArticlePreviewProps = {
+export type ArticlePreviewProps = {
   title: string;
   location: string;
   googleMapsUrl: string;
@@ -50,6 +50,7 @@ const locationIcon = (
     viewBox="0 0 7 10"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={classes.location__icon}
   >
     <path
       fillRule="evenodd"
