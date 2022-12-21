@@ -6,10 +6,13 @@ export const articles: ArticlePreviewProps[] = [
     title: 'St. Petersburg',
     location: 'Russia',
     googleMapsUrl: 'https://goo.gl/maps/aMjgvCrQn3a2C3TE7',
-    startDate: new Date('12/12/22'),
-    endDate: new Date('18/12/22'),
+    startDate: new Date('07/12/22'),
+    endDate: new Date('07/19/22'),
     description:
-      'Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.',
+      'Saint Petersburg is famous for its palaces and classical' +
+      ' architecture of 19th century, the main examples of which include The' +
+      ' Winter Palace on The Palace Square, Peterhof palace and park' +
+      ' ensemble and The Admiralty.',
     imageUrl: StPetersburgPhoto,
   },
 ];

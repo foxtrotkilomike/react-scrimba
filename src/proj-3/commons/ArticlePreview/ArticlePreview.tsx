@@ -1,4 +1,5 @@
 import classes from './ArticlePreview.module.scss';
+import postProcessDataFormat from '../../postProcessDataFormat';
 
 export const ArticlePreview = (props: ArticlePreviewProps): JSX.Element => {
   const {
@@ -10,6 +11,9 @@ export const ArticlePreview = (props: ArticlePreviewProps): JSX.Element => {
     description,
     imageUrl,
   } = props;
+
+  const startDateString = formatDateString(startDate);
+  const endDateString = formatDateString(endDate);
 
   return (
     <article className={classes.articlePreview}>
@@ -27,6 +31,11 @@ export const ArticlePreview = (props: ArticlePreviewProps): JSX.Element => {
               </a>
             </p>
           </div>
+          <h2 className={classes.heading}>{title}</h2>
+          <p className={classes.dates}>
+            {startDateString} - {endDateString}
+          </p>
+          <p className={classes.description}>{description}</p>
         </div>
       </div>
     </article>
@@ -41,6 +50,16 @@ export type ArticlePreviewProps = {
   endDate: Date;
   description: string;
   imageUrl: string;
+};
+
+const formatDateString = (date: Date) => {
+  return postProcessDataFormat(
+    date.toLocaleDateString('en-US', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    })
+  );
 };
 
 const locationIcon = (

@@ -5,6 +5,12 @@
     grid-template-columns: 170px 1fr;
     padding: 18px 0;
     height: 240px;
+
+    @media (max-width: 470px) {
+      grid-auto-flow: column;
+      grid-template-rows: 200px 1fr;
+      grid-template-columns: 1fr;
+    }
   }
 
 }
@@ -30,11 +36,12 @@
 }
 
 .header {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 .location {
   display: flex;
+  flex-wrap: wrap;
   gap: 7px;
   line-height: 120%;
 
@@ -56,4 +63,22 @@
     font-size: 0.8em;
     text-decoration: underline;
   }
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+}
+
+.dates {
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 0.9em;
+  line-height: 150%;
+  text-align: justify;
 }
