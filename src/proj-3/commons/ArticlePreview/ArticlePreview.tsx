@@ -24,8 +24,10 @@ export const ArticlePreview = (props: ArticlePreviewProps): JSX.Element => {
         <div className={classes.container__info}>
           <div className={classes.header}>
             <p className={classes.location}>
-              {locationIcon}
-              <span className={classes.location__name}>{location}</span>
+              <div>
+                {locationIcon}
+                <span className={classes.location__name}>{location}</span>
+              </div>
               <a className={classes.location__link} href={googleMapsUrl}>
                 View on Google Maps
               </a>

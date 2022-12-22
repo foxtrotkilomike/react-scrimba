@@ -48,19 +48,21 @@
 }
 
 .location {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
   line-height: 120%;
 
   &__icon {
+    position: absolute;
     width: 10px;
     height: 17px;
-    flex: 0 1 auto;
-    align-self: end;
+    top: 2px;
   }
 
   &__name {
+    padding-left: 16px;
     font-size: 0.9em;
     letter-spacing: 0.12em;
     text-transform: uppercase;
