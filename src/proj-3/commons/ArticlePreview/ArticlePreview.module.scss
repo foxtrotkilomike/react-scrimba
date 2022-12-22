@@ -1,12 +1,15 @@
 .articlePreview {
+  max-width: 720px;
+  margin: 0 auto;
+
   &__container {
     box-sizing: content-box;
     display: grid;
     grid-template-columns: 170px 1fr;
     padding: 18px 0;
-    height: 240px;
+    min-height: 240px;
 
-    @media (max-width: 470px) {
+    @media (max-width: 530px) {
       grid-auto-flow: column;
       grid-template-rows: 200px 1fr;
       grid-template-columns: 1fr;
@@ -21,6 +24,7 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
     min-height: 168px;
+    max-height: 270px;
     overflow: hidden;
 
     img {
@@ -32,6 +36,10 @@
 
   &__info {
     padding: 22px;
+
+    @media (max-width: 530px) {
+      padding: 22px 0;
+    }
   }
 }
 
@@ -48,6 +56,7 @@
   &__icon {
     width: 10px;
     height: 17px;
+    flex: 0 1 auto;
     align-self: end;
   }
 
