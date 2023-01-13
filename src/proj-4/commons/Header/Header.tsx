@@ -1,5 +1,5 @@
 import classes from './Header.module.scss';
-import headerIcon from './troll.webp';
+import headerIcon from '../../../assets/memes/troll.webp';
 
 export const Header = (): JSX.Element => {
   return (
