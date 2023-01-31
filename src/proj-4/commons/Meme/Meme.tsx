@@ -1,6 +1,16 @@
 import classes from './Meme.module.scss';
+import memesData from '../../data/memesData';
+import { useState } from 'react';
 
-export const Meme = (props: MemeProps): JSX.Element => {
+export const Meme = (): JSX.Element => {
+  const [memeImage, setMemeImage] = useState(memesData.data.memes[0].url);
+
+  function getMemeImage() {
+    const memesArray = memesData.data.memes;
+    const randomIndex = Math.floor(Math.random() * memesArray.length);
+    setMemeImage(memesArray[randomIndex].url);
+  }
+
   return (
     <main className={classes.main}>
       <div className={classes.memeForm}>
@@ -18,12 +28,13 @@ export const Meme = (props: MemeProps): JSX.Element => {
           value="1"
           onChange={() => {}}
         />
-        <button className={classes.memeForm__button} onClick={() => {}}>
+        <button className={classes.memeForm__button} onClick={getMemeImage}>
           Create meme
         </button>
+      </div>
+      <div className={classes.memeImage__container}>
+        <img src={memeImage} alt="meme" />
       </div>
     </main>
   );
 };
-
-type MemeProps = Record<string, string>;
