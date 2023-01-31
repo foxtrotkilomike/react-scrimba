@@ -33,7 +33,7 @@ export const Meme = (): JSX.Element => {
         </button>
       </div>
       <div className={classes.memeImage__container}>
-        <img src={memeImage} alt="meme" />
+        <img src={memeImage} alt="meme" className={classes.memeImage} />
       </div>
     </main>
   );

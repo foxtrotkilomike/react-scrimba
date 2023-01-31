@@ -27,3 +27,13 @@
     font-size: 1.4em;
   }
 }
+
+.memeImage {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+
+  &__container {
+    height: 400px;
+  }
+}
