@@ -18,21 +18,16 @@ export const Meme = (): JSX.Element => {
     }));
   }
 
-  function setTopMemeText(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleMemeForm(e: React.ChangeEvent<HTMLInputElement>) {
+    const { value, name } = e.target;
     setMeme((prevMeme) => ({
       ...prevMeme,
-      topText: e.target.value,
+      [name]: value,
     }));
   }
 
-  function setBottomMemeText(e: React.ChangeEvent<HTMLInputElement>) {
-    setMeme((prevMeme) => ({
-      ...prevMeme,
-      bottomText: e.target.value,
-    }));
-  }
-
-  function createMeme() {
+  function createMeme(e: React.SyntheticEvent) {
+    e.preventDefault();
     const { topText, bottomText } = meme;
     getMemeImage();
     console.log(`
@@ -43,25 +38,25 @@ export const Meme = (): JSX.Element => {
 
   return (
     <main className={classes.main}>
-      <div className={classes.memeForm}>
+      <form className={classes.memeForm} onSubmit={createMeme}>
         <input
           type="text"
           placeholder="Top text"
           className={classes.memeForm__input}
+          name="topText"
           value={meme.topText}
-          onChange={setTopMemeText}
+          onChange={handleMemeForm}
         />
         <input
           type="text"
           placeholder="Bottom text"
           className={classes.memeForm__input}
+          name="bottomText"
           value={meme.bottomText}
-          onChange={setBottomMemeText}
+          onChange={handleMemeForm}
         />
-        <button className={classes.memeForm__button} onClick={createMeme}>
-          Create meme
-        </button>
-      </div>
+        <button className={classes.memeForm__button}>Create meme</button>
+      </form>
       <div className={classes.memeImage__container}>
         <img src={meme.randomImage} alt="meme" className={classes.memeImage} />
       </div>
