@@ -28,12 +28,7 @@ export const Meme = (): JSX.Element => {
 
   function createMeme(e: React.SyntheticEvent) {
     e.preventDefault();
-    const { topText, bottomText } = meme;
     getMemeImage();
-    console.log(`
-      topText: ${topText},
-      bottomText: ${bottomText}
-    `);
   }
 
   return (
@@ -59,6 +54,12 @@ export const Meme = (): JSX.Element => {
       </form>
       <div className={classes.memeImage__container}>
         <img src={meme.randomImage} alt="meme" className={classes.memeImage} />
+        <p className={`${classes.memeText} ${classes.memeText_top}`}>
+          {meme.topText}
+        </p>
+        <p className={`${classes.memeText} ${classes.memeText_bottom}`}>
+          {meme.bottomText}
+        </p>
       </div>
     </main>
   );
