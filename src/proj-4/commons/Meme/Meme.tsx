@@ -1,6 +1,6 @@
 import classes from './Meme.module.scss';
 import memesData from '../../data/memesData';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const Meme = (): JSX.Element => {
   const [meme, setMeme] = useState({
@@ -8,13 +8,13 @@ export const Meme = (): JSX.Element => {
     bottomText: '',
     randomImage: memesData.data.memes[0].url,
   });
+  const [allMemes, setAllMemes] = useState<{ url: string }[]>([]);
 
   function getMemeImage() {
-    const memesArray = memesData.data.memes;
-    const randomIndex = Math.floor(Math.random() * memesArray.length);
+    const randomIndex = Math.floor(Math.random() * allMemes.length);
     setMeme((prevMeme) => ({
       ...prevMeme,
-      randomImage: memesArray[randomIndex].url,
+      randomImage: allMemes[randomIndex].url,
     }));
   }
 
@@ -30,6 +30,12 @@ export const Meme = (): JSX.Element => {
     e.preventDefault();
     getMemeImage();
   }
+
+  useEffect(() => {
+    fetch('https://api.imgflip.com/get_memes')
+      .then((res) => res.json())
+      .then(({ data }) => setAllMemes(data.memes));
+  }, []);
 
   return (
     <main className={classes.main}>
